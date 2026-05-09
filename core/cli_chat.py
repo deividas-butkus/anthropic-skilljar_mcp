@@ -55,6 +55,10 @@ class CliChat(Chat):
         words = query.split()
         command = words[0].replace("/", "")
 
+        if not command or len(words) < 2:
+            print("Usage: /<command> <doc_id>  (e.g. /summarize report.pdf)")
+            return True
+
         messages = await self.doc_client.get_prompt(
             command, {"doc_id": words[1]}
         )

@@ -19,7 +19,10 @@ class Chat:
     ) -> str:
         final_text_response = ""
 
+        messages_before = len(self.messages)
         await self._process_query(query)
+        if len(self.messages) == messages_before:
+            return ""
 
         while True:
             response = self.claude_service.chat(
