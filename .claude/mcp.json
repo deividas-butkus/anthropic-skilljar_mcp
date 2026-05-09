@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "DocumentMCP": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "cwd": "c:\\Projects\\anthropic\\mcp",
+      "env": {
+        "PYTHONPATH": "c:\\Projects\\anthropic\\mcp"
+      }
+    }
+  }
+}
